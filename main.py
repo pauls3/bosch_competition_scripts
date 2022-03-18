@@ -18,8 +18,8 @@ for filename in os.listdir(directory):
 
         if img_filename != "":
             for element in root.findall('path'):
-                element.text = '/home/stanik/rtis_lab/data/bosch_object_detection_midterm/annotations' + img_filename
+                element.text = '/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/' + img_filename
 
-            tree.write(filename)
+            tree.write('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/correct_annotations/' + filename)
         else:
             continue

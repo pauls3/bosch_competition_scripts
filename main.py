@@ -12,8 +12,10 @@ for filename in os.listdir(directory):
         img_filename = ""
         #ET.SubElement(root[0], 'filename')
         for element in root.findall('filename'):
-            img_filename = element.attrib
-        
+           img_filename = element.text
+
+
+
         if img_filename != "":
             for element in root.findall('path'):
                 element.text = '/home/stanik/rtis_lab/data/bosch_object_detection_midterm/annotations' + img_filename

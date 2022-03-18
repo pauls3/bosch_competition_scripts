@@ -19,6 +19,7 @@ x_train, x_test, y_train, y_test = train_test_split(images_arr, y, test_size=0.2
 
 
 for file0 in x_train:
+    print(os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/train', file0))
     shutil.copy(os.path.join(directory, file0), os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/train', file0))
 
 for file0 in x_test:

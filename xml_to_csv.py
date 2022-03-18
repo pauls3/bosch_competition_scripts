@@ -66,7 +66,7 @@ def main():
     if(args.outputFile is None):
         args.outputFile = args.inputDir + "/labels.csv"
 
-    assert(os.path.isdir(args.inputDir))
+    #assert(os.path.isdir(args.inputDir))
 
     xml_df = xml_to_csv(args.inputDir)
     xml_df.to_csv(

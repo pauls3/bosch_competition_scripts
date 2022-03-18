@@ -11,7 +11,8 @@ images_arr = []
 
 for filename in os.listdir(directory):
     #f = os.path.join(directory, filename)
-    images_arr.append(filename)
+    if '.png' in filename:
+        images_arr.append(filename)
 
 y = np.zeros(len(images_arr))
 

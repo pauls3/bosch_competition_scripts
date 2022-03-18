@@ -13,7 +13,7 @@ for filename in os.listdir(directory):
         #ET.SubElement(root[0], 'filename')
         for element in root.findall('filename'):
            img_filename = element.text
-
+           print(img_filename)
 
 
         if img_filename != "":

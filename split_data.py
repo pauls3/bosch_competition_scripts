@@ -16,15 +16,15 @@ for filename in os.listdir(directory):
 
 y = np.zeros(len(images_arr))
 
-x_train, x_test, y_train, y_test = train_test_split(images_arr, y, test_size=0.2, random_state=117)
+x_train, x_test, y_train, y_test = train_test_split(images_arr, y, test_size=0.1, random_state=117)
 
 
 for file0 in x_train:
-    print(os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/train', file0))
-    #shutil.copy(os.path.join(directory, file0), os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/train', file0))
+    #print(os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/train', file0))
+    shutil.copy(os.path.join(directory, file0), os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/90_10/images/train', file0))
 
-#for file0 in x_test:
-    #shutil.copy(os.path.join(directory, file0), os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/val', file0))
+for file0 in x_test:
+    shutil.copy(os.path.join(directory, file0), os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/90_10/images/val', file0))
 
 
 directory = '/home/stanik/rtis_lab/data/bosch_object_detection_midterm/annotations'
@@ -48,8 +48,8 @@ for filename in os.listdir(directory):
 
         if img_filename != "":
             for element in root.findall('path'):
-                element.text = os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/', img_root, img_filename)
+                element.text = os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/90_10/images/', img_root, img_filename)
 
-            tree.write(os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/images/', img_root, filename))
+            tree.write(os.path.join('/home/stanik/rtis_lab/data/bosch_object_detection_midterm/90_10/images/', img_root, filename))
         else:
             continue
